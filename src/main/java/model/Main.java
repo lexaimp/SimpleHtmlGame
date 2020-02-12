@@ -1,11 +1,14 @@
 package model;
 
-import services.db.JDBCConnector;
+import services.AuthToken;
+import services.db.JDBC;
 
 public class Main {
     public static void main(String[] args) {
-        JDBCConnector jdbcConnector = new JDBCConnector();
-        User user = jdbcConnector.getUser("user");
-        System.out.println(user.getPassword());
+        JDBC jdbc = new JDBC();
+        User user = jdbc.getUserByName("user");
+        AuthToken authToken = new AuthToken();
+        authToken.createToken(user);
+        System.out.println(authToken.getToken());
     }
 }

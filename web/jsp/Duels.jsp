@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body class="mainLayout">
-<h1>Главная страница</h1>
+<h1>Страница дуэлей</h1>
 <div>
     <form class="background" action="Duels" method="get">
-        <button type="submit" name="action" value="start">Дуэль</button>
-        <button type="submit" name="action" value="exit">Выход</button>
+        <p>Мой рейтинг ${rating}</p>
+        <button type="submit">Начать дуэль</button>
+        <button type="submit">Выход</button>
     </form>
 </div>
 </body>

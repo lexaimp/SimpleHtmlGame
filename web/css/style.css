@@ -10,7 +10,7 @@ h1 {
     margin-bottom: 5px;
     font-size: 28px;
     font-weight: normal;
-    color: #aeadb4;
+    color: #554d84;
     text-align: center;
 }
 
@@ -45,10 +45,19 @@ input, textarea {
     border-radius: 5px;
 }
 
-input[type="submit"] {
-    width: 10em;
+button {
+    width: 125px;
+    height: 30px;
     color: #ffffff;
     background-color: rgb(244, 114, 15);
     border-radius: 20px;
     float: right;
+}
+
+button:hover {
+    background-color: #aeb400;
+}
+
+button[value="exit"] {
+    float: left;
 }

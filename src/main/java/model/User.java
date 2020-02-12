@@ -7,6 +7,10 @@ public class User {
     private String name;
     private String password;
     private Date date;
+    private int damage;
+    private int life;
+    private int rating;
+    private String token;
 
     public User(String name, String password, Date date) {
         this.name = name;
@@ -47,5 +51,37 @@ public class User {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
+    public int getLife() {
+        return life;
+    }
+
+    public void setLife(int life) {
+        this.life = life;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }

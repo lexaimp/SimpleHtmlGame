@@ -9,7 +9,7 @@
 <body class="mainLayout">
 <h1>Пароль не верен, попробуйте ещё раз!</h1>
 <div>
-    <form class="background" action="Authentication" method="post">
+    <form class="background" action="MainPage" method="post">
         <div>
             <label for="name">Ваше имя</label>
             <input type="text" id="name" name="name" required="required" placeholder="Введите имя *">
@@ -17,7 +17,7 @@
         <div>
             <label for="password">Пароль</label>
             <input type="password" id="password" name="password" required="required" placeholder="Пароль *"></div>
-        <input type="submit" value="Вход">
+        <button type="submit">Вход</button>
     </form>
 </div>
 </body>
