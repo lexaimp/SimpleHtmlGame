@@ -1,14 +1,14 @@
 package model;
 
-import services.AuthToken;
+import services.Password;
 import services.db.JDBC;
 
 public class Main {
     public static void main(String[] args) {
         JDBC jdbc = new JDBC();
         User user = jdbc.getUserByName("user");
-        AuthToken authToken = new AuthToken();
-        authToken.createToken(user);
-        System.out.println(authToken.getToken());
+        String hashingPassword = Password.getSaltedHash("asd123");
+        System.out.println(hashingPassword);
+        System.out.println(Password.check("asd1234", hashingPassword));
     }
 }

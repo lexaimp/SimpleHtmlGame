@@ -1,6 +1,7 @@
 package services.db;
 
 import model.User;
+import services.Password;
 
 import java.sql.*;
 
@@ -16,12 +17,13 @@ public class JDBC {
 
     public void createUser(String name, String password, Date date) {
         try (Statement statement = getStatement()) {
-            statement.execute("INSERT INTO users" +
+            statement.executeUpdate("INSERT INTO users" +
                     "(name, password, date_created)" +
-                    "VALUES ('" + name + "','" + password + "','" + date + "')");
-            statement.execute("INSERT INTO attributes" +
+                    "VALUES ('" + name + "','" + Password.getSaltedHash(password) + "','" + date + "')");
+            statement.executeUpdate("INSERT INTO attributes " +
                     "(user_id)" +
-                    "VALUES (" + getUserByName(name).getId() + ")");
+                    "SELECT id FROM users " +
+                    "WHERE name = '" + name + "'");
         } catch (SQLException e) {
             e.printStackTrace();
         }
